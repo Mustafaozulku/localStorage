@@ -54,9 +54,31 @@ if(window.location.href == 'http://127.0.0.1:5500/index.html'){
     btn.classList.add('btn','btn-dark')
     btn.textContent = 'sepete ekle'
     btn.addEventListener('click', ()=> {
-        sepet.push(urun)
+        // sepet.push(urun)
+        console.log(sepet.length)
 
-        localStorage.setItem('sepet',JSON.stringify(sepet))
+        let found = false
+
+        if (sepet.length == 0) {
+            sepet.push(urun)
+
+            found = true
+        } else {
+            sepet.forEach(sepetUrunu => {
+                // console.log(sepetUrunu.isim == urun.isim)
+                if (sepetUrunu.isim == urun.isim) {
+                    sepetUrunu.quantity++
+                    found = true
+                }
+
+            })
+        }
+
+        if (!found) {
+            sepet.push(urun)
+        }
+
+        localStorage.setItem('sepet', JSON.stringify(sepet))
         span.textContent = sepet.length
         
     })
