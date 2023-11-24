@@ -28,7 +28,7 @@ if (localItem) {
 // localStorage.clear()
 console.log(window.location.href)
 console.log(sepet.length)
-if (window.location.href == 'http://127.0.0.1:5500/index.html') {
+if (window.location.href == 'https://mustafaozulku.github.io/localStorage/') {
     const row = document.querySelector('.row')
     const input = document.getElementById('input')
 
@@ -139,7 +139,7 @@ if (window.location.href == 'http://127.0.0.1:5500/index.html') {
 
         row.append(col)
     })
-} else if (window.location.href == 'http://127.0.0.1:5500/sepet.html') {
+} else if (window.location.href == 'https://mustafaozulku.github.io/localStorage/sepet.html') {
     const container = document.querySelector('.container')
     if (sepet.length == 0) {
         const h4 = document.createElement('h4')
